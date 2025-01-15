@@ -1,5 +1,6 @@
 package com.example
 
+import com.example.models.TTTGame
 import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*
 import io.ktor.server.plugins.calllogging.*
@@ -13,8 +14,8 @@ import java.time.Duration
 import kotlin.time.Duration.Companion.seconds
 import org.slf4j.event.*
 
-fun Application.configureRouting() {
+fun Application.configureRouting(game: TTTGame) {
     routing {
-
+        socket(game)
     }
 }

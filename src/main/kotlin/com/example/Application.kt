@@ -1,5 +1,6 @@
 package com.example
 
+import com.example.models.TTTGame
 import io.ktor.server.application.*
 
 fun main(args: Array<String>) {
@@ -7,8 +8,10 @@ fun main(args: Array<String>) {
 }
 
 fun Application.module() {
+    val game = TTTGame()
+
     configureMonitoring()
     configureSockets()
     configureSerialization()
-    configureRouting()
+    configureRouting(game)
 }
